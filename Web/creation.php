@@ -44,7 +44,7 @@ require "content/nav/navbar.php";
         </div>
     </div>
 </div>
-
+</div>
 <?php
 require "content/nav/piedpage.php";
 ?>

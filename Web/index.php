@@ -20,12 +20,14 @@
 require "content/nav/navbar.php";
 ?>
 
-<div class="container">
+<div id='page-wrapper' style="padding: 20px">
     <div class="page-header">
         <h1>Projet SI6 - Gestion d'un compte</h1>
     </div>
     <p class="lead">C'est une page d'exemple</p>
     <p>Seulement le style général du site à été réaliser; Des modification aurons lieu prochainement</p>
+</div>
+
 </div>
 
 <?php
