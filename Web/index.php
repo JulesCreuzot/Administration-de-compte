@@ -28,6 +28,7 @@ require "content/nav/navbar.php";
     <p>Seulement le style général du site à été réaliser; Des modification aurons lieu prochainement</p>
 </div>
 
+<!-- Merci de ne pas enlever cette div, elle ferme un contenaire ouvert dans la Navbar !! -->
 </div>
 
 <?php

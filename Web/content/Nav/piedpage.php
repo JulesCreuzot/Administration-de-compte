@@ -16,3 +16,4 @@
 <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/4579/bootstrap.min.js'></script>
 <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/4579/bootstrap-table.js'></script>
 <script  src="content/js/navbar.js"></script>
+<script  src="content/js/identification.js"></script>
