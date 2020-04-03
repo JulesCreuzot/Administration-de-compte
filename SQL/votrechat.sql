@@ -1,5 +1,5 @@
-create table TypeCompte (
-    typeCompte varchar(15) not null,
+create table TypesComptes (
+    typesComptes varchar(15) not null,
     primary key (typeCompte)
 ) engine = InnoDB;
 
@@ -11,14 +11,14 @@ create table Comptes (
     prenom varchar(50),
     pseudo varchar(15),
     description text,
-    typeCompte varchar(15) not null default 'Visiteur',
+    libelleCompte varchar(15) not null default 'Visiteur',
     primary key (id),
-    foreign key (typeCompte) references TypeCompte(typeCompte)
+    foreign key (libelleCompte references TypesComptes(typesComptes)
 )engine = InnoDB;
 
 
 -- insersion des données
-insert into TypeCompte(typeCompte) values
+insert into TypesComptes(typeCompte) values
                                           ('Administrateur'),
                                           ('Visiteur');
 
