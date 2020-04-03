@@ -58,12 +58,12 @@ require "content/nav/navbar.php";
                 <div class="form sign-up">
                     <h2>Inscription</h2>
                     <label>
-                        <span>Pseudo</span>
-                        <input type="text" id="pseudo"/>
+                        <span>Adresse e-mail</span>
+                        <input type="text" id="email"/>
                     </label>
                     <label>
-                        <span>Adresse e-mail</span>
-                        <input type="email" id="email" />
+                        <span>Confirmation d'adresse e-mail</span>
+                        <input type="email" id="emailverif" />
                     </label>
                     <label>
                         <span>Mot de passe</span>
