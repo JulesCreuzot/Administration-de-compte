@@ -1,7 +1,15 @@
+<?php
+//Le session Start doit être sur toute les pages
+session_start();
+if(isset($_SESSION['compte'])) {
+    header("Location:index.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Votre Chat  | Connexion</title>
+    <title>Votre Chat  | Identification</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="icon" type="image/png" href="#">
@@ -10,11 +18,12 @@
     <link rel="stylesheet" href="content/css/identification.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 
-
-    <script src="content/js/identification.js"></script>
-    <script src="content/js/bootstrap.min.js"></script>
+    <script src="content/js/class.std.js"></script>
     <script src="content/js/jquery.min.js"></script>
-    <script src="content/js/navbar.js"></script>
+    <script src="content/js/bootstrap.min.js"></script>
+
+
+
 
 </head>
 <body>
@@ -23,22 +32,26 @@
 require "content/nav/navbar.php";
 ?>
 
-<div class="container" style="padding-top: 100px">
-    <div class="row">
+<div class="container" style="padding-top: 50px">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
         <div class="cont">
             <div class="form sign-in">
                 <h2>Connexion</h2>
-                <label>
+                <label for="email" class="text-info">
                     <span>Adresse e-mail</span>
-                    <input type="email" />
+                    <input id="identifiant" type="email" />
+                    <span id='messageConnexion' class='text-danger'></span>
                 </label>
-                <label>
+                <label for="mdp" class="text-info">
                     <span>Mot de passe</span>
-                    <input type="password" />
-                    <button class="unmask" type="button" title="Masquer/Demasquer le mot de passe">Démasquer</button>
+                    <input id="psswd" type="password" />
+                    <span id='messageMotDePasse' class='text-danger'></span>
+                    <div id="msgConnexion"></div>
+                    <button id="mdp" class="unmask" type="button" title="Masquer/Demasquer le mot de passe">Démasquer</button>
                 </label>
                 <p class="forgot-pass">Mot de passe oublié ?</p>
-                <button type="button" class="submit">Se connecter</button>
+                <button id='btnConnexion' type="button" class="submit">Se connecter</button>
             </div>
             <div class="sub-cont">
                 <div class="img">
@@ -79,14 +92,14 @@ require "content/nav/navbar.php";
             </div>
         </div>
     </div>
+    <div class="col-sm-2"></div>
 </div>
 
 
-</div>
 <?php
 require "content/nav/piedpage.php";
 ?>
 
-
+<script src="content/js/identification.js?ver=2"></script>
 </body>
 </html>

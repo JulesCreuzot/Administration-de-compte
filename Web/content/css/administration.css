@@ -1,0 +1,49 @@
+/* fixer certains paramètres en fonction de la taille de l'écran
+Extra small <576px	Small ≥576px	 Medium ≥768px Large ≥992px	 Extra large ≥1200px
+*/
+
+/* pour une taille inférieure à 576 px */
+@media (max-width: 576px) {
+    .masquer {
+        display : none;
+    }
+    .card-columns {
+        column-count: 1;
+    }
+}
+
+/* à partir de 576 px */
+@media (min-width: 576px) {
+    html  { font-size: 75.0%;  /* 75% of 16px = 12px */}
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+/* à partir de 768 px  */
+@media (min-width: 768px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+/* à partir de 992 px  */
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+/* à partir de 1200 px */
+@media (min-width: 1200px) {
+    .card-columns {
+        column-count: 4;
+    }
+}
+
+/* à partir de 1600 px  */
+@media (min-width: 1600px) {
+    .card-columns {
+        column-count: 5;
+    }
+}

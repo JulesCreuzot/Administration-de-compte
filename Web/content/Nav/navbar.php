@@ -15,23 +15,38 @@
 
         <div class='collapse navbar-collapse navbar-hamburger-delicious'>
             <ul class='nav navbar-nav side-nav fadeInLeft'>
-                <li class='toggle-nav visible-lg visible-md visible-sm' hidden><a><i class='fa fa-lg fa-arrow-left'></i>Réduire</a></li>
+                <li class='toggle-nav visible-lg visible-md visible-sm'><a><i class='fa fa-lg fa-arrow-left'></i>Réduire</a></li>
                 <li class='dashboard'><a href='index.php'><i class="fa fa-lg fa-home"></i>Accueil</a></li>
-                <li class='dashboard'><a href='#chat'><i class="fa fa-lg fa-comments"></i>Chat</a></li>
+                <?php
+                if (isset($_SESSION['compte'])) {
+                ?>
+                <li class='dashboard'><a href='chat.php'><i class="fa fa-lg fa-comments"></i>Chat</a></li>
+                <?php } ?>
                 <li class='divider'><hr></li>
-                <li class='dashboard'><a href='identification.php'><i class='fa fa-lg fa-user'></i>S'identifier</a></li>
-                <li class='dropdown user-dropdown'>
-                    <a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class="js-user-name"><i class='fa fa-lg fa-user'></i>Nom Compte</span><b class='caret'></b></a>
-                    <ul class='dropdown-menu'>
-                        <li class='settings'><a href='#'><i class="fa fa-lg fa-lock"></i>Administration</a></li>
-                        <li class='settings'><a href='#'><i class='fa fa-lg fa-gear'></i>Paramètres</a></li>
-                    </ul>
-                </li>
+                <?php
+                if (isset($_SESSION['compte']['mail'])) {
+                    ?>
+                    <li class='dropdown user-dropdown'>
+                        <a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class="js-user-name"><i class='fa fa-lg fa-user'></i>Mom Compte</span><b class='caret'></b></a>
+                        <ul class='dropdown-menu'>
+                            <?php
+                            if ($_SESSION['compte']['libellecomptes'] === "Administrateur") {
+                            ?>
+                            <li class='settings'><a href='administration.php'><i class="fa fa-lg fa-lock"></i>Administration</a></li>
+                            <?php } ?>
+                            <li class='settings'><a href='gestioncomptes.php'><i class='fa fa-lg fa-gear'></i>Paramètres</a></li>
+                            <li class='settings'><a href='deconnexion.php'><i class='fa fa-lg fa-sign-out'></i>Déconnexion</a></li>
+                        </ul>
+                    </li>
+                    <?php
+                } else {
+                    ?>
+                    <li class='dashboard'><a href='identification.php'><i class='fa fa-lg fa-user'></i>S'identifier</a></li>
+                    <?php
+                }
+                ?>
                 <li class='divider'><hr></li>
-                <li class='active docs'><a href='#cgu'><i class='fa fa-lg fa-folder-open'></i>Mention Légale</a></li>
-            </ul>
-            <ul class='nav navbar-nav navbar-right navbar-user'>
-            </ul>
+                <li class='active docs'><a href='mentionslegales.php'><i class='fa fa-lg fa-folder-open'></i>Mentions Légales</a></li>
         </div>
-
     </nav>
+</div>

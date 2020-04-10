@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Votre Chat | Accueil</title>
+    <title>Votre Chat | Mentions Légales</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="icon" type="image/png" href="#">
@@ -14,7 +14,6 @@ session_start();
 
     <script src="content/js/jquery.min.js"></script>
     <script src="content/js/bootstrap.min.js"></script>
-
 
 </head>
 <body>
@@ -25,11 +24,11 @@ require "content/nav/navbar.php";
 
 <div class="container-fluid" style="padding-top: 20px; padding-inline: 100px;">
     <div class="page-header">
-        <h1>Projet SI6 - Gestion d'un compte</h1>
+        <h1>Mentions Légales / Termes d'utilisations</h1>
     </div>
-    <p class="lead">C'est une page d'exemple</p>
-    <p>Seulement le style général du site à été réaliser; Des modification aurons lieu prochainement</p>
+    <p class="lead">Comming soon..</p>
 </div>
+
 
 <?php
 require "content/nav/piedpage.php";

@@ -1,4 +1,4 @@
--- Dernière MAJ :  mar. 07 avr. 2020 à 17:17
+-- Dernière MAJ :  mer. 8 avr. 2020 à 10:08
 -- Version du serveur :  5.7.28
 -- Version de PHP :  7.3.12
 -- Base de données :  `votrechat`
@@ -30,9 +30,12 @@ CREATE TABLE IF NOT EXISTS `comptes` (
   `pseudo` varchar(15) DEFAULT NULL,
   `description` text,
   `libelleComptes` varchar(15) NOT NULL DEFAULT 'Visiteur',
+   `typesstatus` varchar(7) NOT NULL DEFAULT 'Valide',
+   `nbtentative` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
-  KEY `libelleComptes` (`libelleComptes`)
+  KEY `libelleComptes` (`libelleComptes`),
+  KEY `typesstatus` (`typesstatus`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 
@@ -47,12 +50,33 @@ CREATE TABLE IF NOT EXISTS `typescomptes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Ajout de la clé étrangére des comptes
+-- Création de la table status
+--
+
+DROP TABLE IF EXISTS `typesstatus`;
+CREATE TABLE IF NOT EXISTS `typesstatus` (
+  `status` varchar(7) NOT NULL,
+  PRIMARY KEY (`status`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+--
+-- Ajout des clés étrangéres
 --
 
 ALTER TABLE `comptes`
-  ADD CONSTRAINT `comptes_ibfk_1` FOREIGN KEY (`libelleComptes`) REFERENCES `typescomptes` (`libelleComptes`);
+  ADD CONSTRAINT `comptes_ibfk_1` FOREIGN KEY (`libelleComptes`) REFERENCES `typescomptes` (`libelleComptes`),
+  ADD CONSTRAINT `comptes_ibfk_2` FOREIGN KEY (`typesstatus`) REFERENCES `typesstatus` (`status`);
 COMMIT;
+
+
+--
+-- Ajout des types de status dans la table typesstatus
+--
+
+INSERT INTO `typesstatus` (`status`) VALUES
+('Valide'),
+('Bloquer');
 
 --
 -- Ajout des types de comptes dans la table typesComptes

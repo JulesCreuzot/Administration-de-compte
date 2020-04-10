@@ -4,7 +4,6 @@ function activateNav() {
         $(evt.currentTarget).addClass('active').siblings().removeClass('active');
     });
 }
-
 function addToggle() {
     $('li.toggle-nav').on('click', function () {
         $(this).find('i').toggleClass('rotate-180-deg');
@@ -28,3 +27,4 @@ function init() {
 }
 
 init();
+
