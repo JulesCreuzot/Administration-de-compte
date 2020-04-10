@@ -1,5 +1,4 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css'>
-<link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/4579/bootstrap-table.css'>
 <link rel="stylesheet" href="content/css/navbar.css">
 <div id='wrapper'>
     <nav class='navbar navbar-inverse navbar-fixed-top' role='navigation'>
@@ -20,7 +19,7 @@
                 <?php
                 if (isset($_SESSION['compte'])) {
                 ?>
-                <li class='dashboard'><a href='chat.php'><i class="fa fa-lg fa-comments"></i>Chat</a></li>
+                <li class='print'><a href='chat.php'><i class="fa fa-lg fa-comments"></i>Chat</a></li>
                 <?php } ?>
                 <li class='divider'><hr></li>
                 <?php
@@ -35,7 +34,6 @@
                             <li class='settings'><a href='administration.php'><i class="fa fa-lg fa-lock"></i>Administration</a></li>
                             <?php } ?>
                             <li class='settings'><a href='gestioncomptes.php'><i class='fa fa-lg fa-gear'></i>Paramètres</a></li>
-                            <li class='settings'><a href='deconnexion.php'><i class='fa fa-lg fa-sign-out'></i>Déconnexion</a></li>
                         </ul>
                     </li>
                     <?php
@@ -47,6 +45,13 @@
                 ?>
                 <li class='divider'><hr></li>
                 <li class='active docs'><a href='mentionslegales.php'><i class='fa fa-lg fa-folder-open'></i>Mentions Légales</a></li>
+                <?php
+                if (isset($_SESSION['compte'])) {
+                ?>
+                    <li class='divider'><hr></li>
+                    <li class='person-lookup'><a href='deconnexion.php'><i class='fa fa-lg fa-sign-out'></i>Déconnexion</a></li>
+                <?php } ?>
+
         </div>
     </nav>
 </div>

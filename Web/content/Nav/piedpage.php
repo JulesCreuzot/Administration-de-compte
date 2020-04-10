@@ -13,5 +13,4 @@
 
 </footer>
 
-<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/4579/bootstrap-table.js'></script>
 <script src="content/js/navbar.js?ver=7""></script>

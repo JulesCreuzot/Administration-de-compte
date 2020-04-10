@@ -1,0 +1,48 @@
+patch note V0.5 -- Jules CREUZOT
+    - Auncune notes n'as été prise lors de cette version.
+
+patch note V1.0 -- Jules CREUZOT
+    - Suppresion de fichiers ne servant plus à rien :
+                - recup.php
+                - creation.php
+                - test.txt,
+    - Correction de la position de la bare de navigation seul une div changer d'endroit,
+    - Ajout d'un lien de chat,
+    - Modification sur connexion.php: ajout d'Ids pour le script,
+    - Ajout d'un script de connexion,
+    - Suite à l'ajout du script de connexion, réajustement de la navBar :
+            Des choses ne peuvent plus s'afficher en fonction de la connexion ou non de l'utilisateur,
+    - Ajout d'un script sur chaques pages permettant de gérer l'accées au page en fonction de leurs grade et de la connexion ou non
+    - Ajout de la page gestioncomptes.php : Elle serviras à modifier le compte d'un utilisateur,
+    - Ajout de la page administration.php : elle seriras à gérer tout les comptes des utilisateurs,
+    - MAJ de la base de données pour l'ajout d'expirations:
+                - Ajout de la table typesstatus contenant soit bloquer, doit valide
+                - Ajout de la clé étrangére typesstatus dans la table comptes
+                - ajout de du champ nbtentative dans la table comptes,
+    - Ajout d'un blocage de compte au bout de 4 tentatives de connexions,
+    - Correction du chargement de JQuery qui ne pouvais pas être utiliser par BootStrap sur chaque page,
+    - Correction d'erreur avec la NavBar et JQuery qui rentrais en confusion et bloquer les dropDown,
+    - Ajout d'un faux chat afin de décorer.. Il est est fort probable que nous nous en servions plus tard... :D  ,
+    - Ajout du contenue dans la page administration.php | Elle est non fonctionnel pour le moment...,
+    - Ajout du contenue dans la page gestioncomptes.php| Seul le logo, le grade sons fonctionnel pour le moment...,
+    - Ajout de l'utilisation de Gravatar pour le logo,
+    - Reformatage du JS identification afin d'avoir des commentaire propre et compréhensible
+Non savons que notre site ne passe pas sous Chrome et d'autreq navigateurs suite à un problème d'affichage de nos pages.
+Ce problème seras régler prochainement...
+
+
+patch note V1.0 | 1 -- Jules CREUZOT
+    - Modification sur le fichier liste.txt :
+        - déplacement vers la racine du site internet
+        - renommé en PatchNote.txt
+    - Ajout d'explications concernant le logo dans le fichier gestioncomptes.php,
+    - Résolution du problème, le site peut être lu sans problèmes sur d'autres navigateurs que FireFox,
+    - Suppression d'un script chargé qui n'est plus existant dans gestioncomptes.php,
+    - Ajout d'une fause conversation dans chat.php,
+    - Suite à une suggestion de notre professeur, modification de l'endroit ou ce trouve la bouton de déconnexion,
+    - Ajout de modaux pouvant servir à n'importe quelle endroit du site,
+    - Travail de FrontEnd sur la page gestioncomptes.php,
+    - Suppression d'un vieux script charger dans piedpage.php qui ne sert plus à rien,
+    - Dans navbar.php :
+            - Suppression d'un vieux script charger dans navbar.php qui ne sert plus à rien,
+    - Suppression du fichier passwordcheck.css

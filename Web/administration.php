@@ -31,7 +31,7 @@ if(!isset($_SESSION['compte']) || !($_SESSION['compte']['libellecomptes'] === "A
 require "content/nav/navbar.php";
 ?>
 
-<div class="container-fluid" style="padding-top: 20px; padding-inline: 100px;">
+<div class="container-fluid hautpage">
     <div class="page-header">
         <h1>Votre Chat- Administration des comptes</h1>
     </div>

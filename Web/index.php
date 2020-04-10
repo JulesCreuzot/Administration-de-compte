@@ -23,7 +23,7 @@ session_start();
 require "content/nav/navbar.php";
 ?>
 
-<div class="container-fluid" style="padding-top: 20px; padding-inline: 100px;">
+<div class="container-fluid hautpage" style="padding-top: 20px; padding-inline: 100px;">
     <div class="page-header">
         <h1>Projet SI6 - Gestion d'un compte</h1>
     </div>

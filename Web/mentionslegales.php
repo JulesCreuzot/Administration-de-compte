@@ -22,7 +22,7 @@ session_start();
 require "content/nav/navbar.php";
 ?>
 
-<div class="container-fluid" style="padding-top: 20px; padding-inline: 100px;">
+<div class="container-fluid hautpage">
     <div class="page-header">
         <h1>Mentions Légales / Termes d'utilisations</h1>
     </div>

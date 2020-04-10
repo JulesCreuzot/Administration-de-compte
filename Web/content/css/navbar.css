@@ -131,6 +131,7 @@ li.sub-li {
     background-color: #262626 !important;
 }
 
+
 @media (max-height: 600px) {
     ul.navbar-nav.side-nav > li > a {
         height: 40px;
@@ -143,7 +144,9 @@ body {
 }
 
 #wrapper {
-    height: 100%;
+    /* Résolution du problème =
+     enlever ça :
+   height: 100%;*/
     padding-left: 0;
 }
 
@@ -339,4 +342,13 @@ footer {
     top:0;
     width: 100%;
     z-index: 9999 !important;
+}
+
+/*!
+Incrémentation des haut de page
+ */
+.hautpage {
+    padding-top: 30px;
+    position: relative;
+    padding-left: 60px;
 }

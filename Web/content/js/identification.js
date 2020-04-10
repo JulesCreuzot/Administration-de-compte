@@ -49,7 +49,7 @@ function connecter() {
                 //Connexion réussi, lancement, reset du compteur de tentatives
                 resetnbtentatives();
                 //Laisser un delaie pour l'execution avant la redirection du reset du compteur nbtentative
-                Std.afficherMessage("msgConnexion", "Connexion Réussi", "vert", 0)
+                Std.afficherMessage("msgConnexion", "Connexion Réussi", "vert", 0);
                 setTimeout(function () {
                     location.assign('index.php');
                 }, 2000)
