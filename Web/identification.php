@@ -9,6 +9,7 @@ if(isset($_SESSION['compte'])) {
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
     <title>Votre Chat  | Identification</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -21,9 +22,6 @@ if(isset($_SESSION['compte'])) {
     <script src="content/js/class.std.js"></script>
     <script src="content/js/jquery.min.js"></script>
     <script src="content/js/bootstrap.min.js"></script>
-
-
-
 
 </head>
 <body>
@@ -48,7 +46,7 @@ require "content/nav/navbar.php";
                     <input id="psswd" type="password" />
                     <span id='messageMotDePasse' class='text-danger'></span>
                     <div id="msgConnexion"></div>
-                    <button id="mdp" class="unmask" type="button" title="Masquer/Demasquer le mot de passe">Démasquer</button>
+                    <!-- <button class="unmask" type="button" title="Masquer/Demasquer le mot de passe">Démasquer</button> -->
                 </label>
                 <p class="forgot-pass">Mot de passe oublié ?</p>
                 <button id='btnConnexion' type="button" class="submit">Se connecter</button>
@@ -72,22 +70,26 @@ require "content/nav/navbar.php";
                     <h2>Inscription</h2>
                     <label>
                         <span>Adresse e-mail</span>
-                        <input type="text" id="email"/>
+                        <input id="inscriptionMail" type="email" />
+                        <span id='msgInscriptionMail' class='text-danger'></span>
                     </label>
                     <label>
                         <span>Confirmation d'adresse e-mail</span>
-                        <input type="email" id="emailverif" />
+                        <input id="inscriptionMsgConfirmMail" type="email" />
+                        <span id='msgInscriptionConfirmMail' class='text-danger'></span>
                     </label>
                     <label>
                         <span>Mot de passe</span>
-                        <input type="password" value="" id="password"/>
+                        <input id="inscriptionPassword" type="password" />
+                        <span id='msgInscriptionPswd' class='text-danger'></span>
                     </label>
                     <label>
                         <span>Répetez le mot de passe</span>
-                        <input type="password" value="" id="passwordcheck"/>
+                        <input id="inscriptionConfirmerPassword" type="password"/>
+                        <span id='inscriptionMsgConfirmPassword' class='text-danger'></span>
+                        <div id="msgInscription"></div>
                     </label>
-                    <button type="button" class="submit">S'inscrire</button>
-
+                    <button id="btnInscription" type="button" class="submit">S'inscrire</button>
                 </div>
             </div>
         </div>
@@ -100,6 +102,6 @@ require "content/nav/navbar.php";
 require "content/nav/piedpage.php";
 ?>
 
-<script src="content/js/identification.js?ver=2"></script>
+<script src="content/js/identification.js?ver=6"></script>
 </body>
 </html>

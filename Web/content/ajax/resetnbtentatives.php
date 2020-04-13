@@ -15,7 +15,8 @@ $curseur = $db->prepare($sql);
 $curseur->bindParam('identifiant', $identifiant);
 $curseur->execute();
 $curseur->closeCursor();
-
+$ok = 1;
+echo $ok;
 
 
 

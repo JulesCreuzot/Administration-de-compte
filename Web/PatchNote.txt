@@ -30,7 +30,6 @@ patch note V1.0 -- Jules CREUZOT
 Non savons que notre site ne passe pas sous Chrome et d'autreq navigateurs suite à un problème d'affichage de nos pages.
 Ce problème seras régler prochainement...
 
-
 patch note V1.0 | 1 -- Jules CREUZOT
     - Modification sur le fichier liste.txt :
         - déplacement vers la racine du site internet
@@ -46,3 +45,10 @@ patch note V1.0 | 1 -- Jules CREUZOT
     - Dans navbar.php :
             - Suppression d'un vieux script charger dans navbar.php qui ne sert plus à rien,
     - Suppression du fichier passwordcheck.css
+
+patch note V1.0 | 2 -- Jules CREUZOT
+    - Dans identification.php :
+        - Amélioration de la connexion
+        - Ajout de la gestion d'inscription
+        - la fonction connexion à étè placé en dernier,
+    - Ajout du fichier inscription.php dans le répértoire ajax, il contiendra le requête permettant de crée un compte
