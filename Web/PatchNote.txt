@@ -52,3 +52,15 @@ patch note V1.0 | 2 -- Jules CREUZOT
         - Ajout de la gestion d'inscription
         - la fonction connexion à étè placé en dernier,
     - Ajout du fichier inscription.php dans le répértoire ajax, il contiendra le requête permettant de crée un compte
+
+patch note V1.0 | 3 -- Jules CREUZOT
+    - Dans le ajax inscription.php :
+        - Ajout du hachage du mot de passe pour plus de sécurité
+    - Dans le ajax identification.php :
+        - Ajout de la comparaison du hachage du mot de passe afin de pouvoir ce conneter
+    - Modification de la base de données :
+        - MAJ du champ pswd dans la table de compte
+        - Suppression d'un compte car nous pouvons en crée
+        - Suite au hachage des mot de passe, changement des mot de passe dans la base de données pour les deux comptes existant
+    - Ajout de l'affichage des information personnel sur la page gestioncomptes.php
+    - Travail sur un style plus propre de la page

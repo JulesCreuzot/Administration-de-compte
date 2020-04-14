@@ -1,4 +1,4 @@
--- Dernière MAJ :  mer. 8 avr. 2020 à 10:08
+-- Dernière MAJ :  mar. 17 avr. 2020 à 12:08
 -- Version du serveur :  5.7.28
 -- Version de PHP :  7.3.12
 -- Base de données :  `votrechat`
@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `comptes`;
 CREATE TABLE IF NOT EXISTS `comptes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
-  `pswd` varchar(255) NOT NULL,
+  `pswd` char (65) NOT NULL,
   `nom` varchar(50) DEFAULT NULL,
   `prenom` varchar(50) DEFAULT NULL,
   `pseudo` varchar(15) DEFAULT NULL,
@@ -90,6 +90,5 @@ INSERT INTO `typescomptes` (`libelleComptes`) VALUES
 -- Ajout des comptes nous servant pour l'essaie dans la table comptes
 --
 INSERT INTO `comptes` (`id`, `email`, `pswd`, `nom`, `prenom`, `pseudo`, `description`, `libelleComptes`) VALUES
-(1, 'jules.creuzot@saint-remi.net', '1234', NULL, NULL, 'Luzko', NULL, 'Administrateur'),
-(2, 'corentin.posson@saint-remi.net', '1111', NULL, NULL, 'CorPos', NULL, 'Administrateur'),
-(3, 'julescreuzotbobo@gmail.com', '1111', 'Jules', 'Creuzot', 'Luzuzu', 'Je suis moi même', 'Visiteur');
+(1, 'jules.creuzot@saint-remi.net', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'Jules', 'Creuzot', 'Luzko', 'Je suis moi même', 'Administrateur'),
+(2, 'corentin.posson@saint-remi.net', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', NULL, NULL, 'CorPos', NULL, 'Visiteur');

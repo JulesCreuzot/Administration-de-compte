@@ -4,10 +4,8 @@ session_start();
 if(!isset($_SESSION['compte'])) {
     header("Location:index.php");
 }else
-    $mail = $_SESSION['compte']['mail'];
-$pseudo = $_SESSION['compte']['pseudo'];
-$grade = $_SESSION['compte']['libellecomptes'];
-$image = "https://secure.gravatar.com/avatar/".md5($mail)."?s=150&";
+    $pseudo = $_SESSION['compte']['pseudo'];
+$image = "https://secure.gravatar.com/avatar/".md5($_SESSION['compte']['mail'])."?s=150&";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -22,6 +20,7 @@ $image = "https://secure.gravatar.com/avatar/".md5($mail)."?s=150&";
 
     <script src="content/js/jquery.min.js"></script>
     <script src="content/js/bootstrap.min.js"></script>
+    <script src="content/js/gestioncompte.js?ver=1"></script>
 
 
 </head>
@@ -70,7 +69,7 @@ require "content/nav/navbar.php";
                                 </div>
                                 <div class="form-group col-md-2 "></div>
                                 <div class="form-group col-md-6 ">
-                                    <input id="email" class="form-control text-center" autocomplete="off" value="<?= $mail ?>" readonly>
+                                    <input id="email" class="form-control text-center" autocomplete="off" readonly>
                                 </div>
                                 <div class="form-group col-md-2">
                                     <button data-modal-trigger="modalemail" class="modif__btn modif__btn_">Modifier</button>
@@ -82,10 +81,10 @@ require "content/nav/navbar.php";
                                     <label>Nom et Prénom </label>
                                 </div>
                                 <div class="form-group col-md-4 ">
-                                    <input id="nom" class="form-control" autocomplete="off" readonly>
+                                    <input id="nom" class="form-control text-center" autocomplete="off" readonly>
                                 </div>
                                 <div class="form-group col-md-4 ">
-                                    <input id="prenom" class="form-control" autocomplete="off" readonly>
+                                    <input id="prenom" class="form-control text-center" autocomplete="off" readonly>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <button data-modal-trigger="modalnomprenom" class="modif__btn modif__btn_">Modifier</button>
@@ -94,11 +93,11 @@ require "content/nav/navbar.php";
                             <div class="form-row">
                                 <div class="form-group col-md-4 text-center">
                                     <label>Grade </label>
-                                    <input class="form-control " autocomplete="off"  value="<?= $grade ?>" readonly>
+                                    <input id="grade" class="form-control text-center" autocomplete="off" readonly>
                                 </div>
                                 <div class="form-group col-md-4 text-center">
                                     <label for="pseudo">Pseudo </label>
-                                    <input id="pseudo" class="form-control" autocomplete="off" value="<?= $pseudo ?>" readonly>
+                                    <input id="pseudo" class="form-control text-center" autocomplete="off" readonly>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label></label>
@@ -133,8 +132,8 @@ require "content/nav/navbar.php";
                                     </header>
                                     <div class="modal__content">
                                         <div class="form-group col-md-12 ">
-                                            <input id="email" class="form-control" value="<?= $mail ?>" autocomplete="off">
-                                            <span id='messageEmail' class='text-danger'></span>
+                                            <input id="inputEmail" class="form-control" autocomplete="off">
+                                            <span id='messageInputEmail' class='text-danger'></span>
                                         </div>
                                     </div>
                                     <div>
@@ -152,14 +151,14 @@ require "content/nav/navbar.php";
                                     <div class="modal__content">
                                         <div class="form-row">
                                             <div class="form-group col-md-6 ">
-                                                <label for="nom">Nom </label>
-                                                <input id="nom" class="form-control" autocomplete="off">
-                                                <span id='messageNom' class='text-danger'></span>
+                                                <label for="inputNom">Nom </label>
+                                                <input id="inputNom" class="form-control" autocomplete="off">
+                                                <span id='messageInputNom' class='text-danger'></span>
                                             </div>
                                             <div class="form-group col-md-6 ">
-                                                <label for="prenom">Prénom </label>
-                                                <input id="prenom" class="form-control" autocomplete="off">
-                                                <span id='messagePrenom' class='text-danger'></span>
+                                                <label for="inputPrenom">Prénom </label>
+                                                <input id="inputPrenom" class="form-control" autocomplete="off">
+                                                <span id='messageInputPrenom' class='text-danger'></span>
                                             </div>
                                         </div>
                                     </div>
@@ -177,8 +176,8 @@ require "content/nav/navbar.php";
                                     <div class="modal__content">
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
-                                                <input id="pseudo" class="form-control" autocomplete="off" value="<?= $pseudo ?>">
-                                                <span id='messagePseudo' class='text-danger'></span>
+                                                <input id="inputPseudo" class="form-control" autocomplete="off">
+                                                <span id='messageInputPseudo' class='text-danger'></span>
                                             </div>
                                         </div>
                                     </div>
@@ -229,11 +228,11 @@ require "content/nav/navbar.php";
 
 
 
-    <?php
-    require "content/nav/piedpage.php";
-    ?>
+<?php
+require "content/nav/piedpage.php";
+?>
 
-    <script src="content/js/modal.js"></script>
+<script src="content/js/modal.js"></script>
 
 </body>
 </html>

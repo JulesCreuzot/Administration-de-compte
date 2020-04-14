@@ -6,6 +6,7 @@ if(isset($_SESSION['compte'])) {
     exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

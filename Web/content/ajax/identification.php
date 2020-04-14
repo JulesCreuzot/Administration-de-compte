@@ -30,9 +30,9 @@ $curseur->closeCursor();
 
 if (!$ligne) {
     $ok = 0;
-} elseif ($ligne['pswd'] != $MotDePasse && $ligne['nbtentative'] < 3) {
+} elseif ($ligne['pswd'] != hash('sha256', $MotDePasse) && $ligne['nbtentative'] < 3) {
     $ok = 0;
-}elseif ($ligne['pswd'] != $MotDePasse && $ligne['nbtentative'] >= 3 ) {
+}elseif ($ligne['pswd'] != hash('sha256', $MotDePasse) && $ligne['nbtentative'] >= 3 ) {
     $ok = 3;
 }elseif ($ligne['nbtentative'] >= 3) {
     $ok = 2;
