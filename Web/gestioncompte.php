@@ -5,7 +5,7 @@ if(!isset($_SESSION['compte'])) {
     header("Location:index.php");
 }else
     $pseudo = $_SESSION['compte']['pseudo'];
-$image = "https://secure.gravatar.com/avatar/".md5($_SESSION['compte']['mail'])."?s=150&";
+    $image = "https://secure.gravatar.com/avatar/".md5($_SESSION['compte']['mail'])."?s=150&d=mp&r=g";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,8 +20,8 @@ $image = "https://secure.gravatar.com/avatar/".md5($_SESSION['compte']['mail']).
 
     <script src="content/js/jquery.min.js"></script>
     <script src="content/js/bootstrap.min.js"></script>
-    <script src="content/js/gestioncompte.js?ver=1"></script>
-
+    <script src="content/js/gestioncompte.js?ver=2"></script>
+    <script src="content/js/class.std.js"></script>
 
 </head>
 <body>
@@ -29,7 +29,12 @@ $image = "https://secure.gravatar.com/avatar/".md5($_SESSION['compte']['mail']).
 <?php
 require "content/nav/navbar.php";
 ?>
-
+<div class='popup' style="padding-top: 100px">
+    <div class='text__popup'>
+        <h1>Modification éffectué</h1>
+        <p><a href="" class='fermer'>Fermer</a></p>
+    </div>
+</div>
 <div class="container-fluid hautpage">
     <h1>Votre Chat- Gestion de votre compte <?= $pseudo ?></h1>
 </div>
@@ -62,6 +67,8 @@ require "content/nav/navbar.php";
             <div class="panel-body">
                 <div class="col-md-12 text-center">
                     <div class="card mx-auto">
+
+<!-- les informations utilisateurs -->
                         <div id='compte' class="card-body" style="padding: 10px;">
                             <div class="form-row">
                                 <div class="form-group col-md-12 text-center ">
@@ -120,11 +127,19 @@ require "content/nav/navbar.php";
                                 <span id='messageNote' class='text-danger'></span>
                             </div>
 
-                            <div class="text-center">
-                                <button id='annuler' class="btn btn-danger">Modifier la note</button>
-                                <button id='btnSupprimer' class="btn btn-danger">Supprimer mon compte</button>
+
+                            <div class="form-group col-md-6">
+                                <button id='btnVNote' class="modif__btn modif__btn_">Modifier la Note / Desription</button>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <button  data-modal-trigger="modalSupprimerCompte" class="valider">Supprimer mon compte</button>
                             </div>
 
+
+
+
+
+<!-- les modaux -->
                             <div class="modal" data-modal-name="modalemail">
                                 <div class="modal__dialog">
                                     <header class="modal__header">
@@ -133,16 +148,15 @@ require "content/nav/navbar.php";
                                     <div class="modal__content">
                                         <div class="form-group col-md-12 ">
                                             <input id="inputEmail" class="form-control" autocomplete="off">
-                                            <span id='messageInputEmail' class='text-danger'></span>
+                                            <span id="messageInputEmail" class='text-danger'></span>
                                         </div>
                                     </div>
                                     <div>
                                         <button class="annuler" data-modal-dismiss>Annuler</button>
-                                        <button id='btnSupprimer' class="valider">Modifier</button>
+                                        <button id='btnVEmail' class="valider">Modifier</button>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="modal" data-modal-name="modalnomprenom">
                                 <div class="modal__dialog">
                                     <header class="modal__header">
@@ -153,18 +167,19 @@ require "content/nav/navbar.php";
                                             <div class="form-group col-md-6 ">
                                                 <label for="inputNom">Nom </label>
                                                 <input id="inputNom" class="form-control" autocomplete="off">
-                                                <span id='messageInputNom' class='text-danger'></span>
                                             </div>
                                             <div class="form-group col-md-6 ">
                                                 <label for="inputPrenom">Prénom </label>
                                                 <input id="inputPrenom" class="form-control" autocomplete="off">
-                                                <span id='messageInputPrenom' class='text-danger'></span>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <div id="msgModalNomPrenom"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div>
                                         <button class="annuler" data-modal-dismiss>Annuler</button>
-                                        <button id='valider' class="valider">Modifier</button>
+                                        <button id='btnVNomPrenom' class="valider">Modifier</button>
                                     </div>
                                 </div>
                             </div>
@@ -183,7 +198,7 @@ require "content/nav/navbar.php";
                                     </div>
                                     <div>
                                         <button class="annuler" data-modal-dismiss>Annuler</button>
-                                        <button id='btnSupprimer' class="valider">Modifier</button>
+                                        <button id='btnVPseudo' class="valider">Modifier</button>
                                     </div>
                                 </div>
                             </div>
@@ -198,7 +213,7 @@ require "content/nav/navbar.php";
                                             <div class="form-group col-md-12 ">
                                                 <label for="ancienMdp">Ancien mot de passe</label>
                                                 <input id="ancienMdp" type="password" class="form-control" autocomplete="off">
-                                                <span id='messageAncienMdp' class='text-danger'></span>
+                                                <span id='messageAcienMdp' class='text-danger'></span>
                                             </div>
                                             <div class="form-group col-md-12 ">
                                                 <label for="nouveauMdp">Nouveau mot de passe</label>
@@ -206,15 +221,38 @@ require "content/nav/navbar.php";
                                                 <span id='messageNouveauMdp' class='text-danger'></span>
                                             </div>
                                             <div class="form-group col-md-12 ">
-                                                <label for="CfmNouveauMdp">Confirmation du nouveau mot de Passe</label>
-                                                <input id="CfmNouveauMdp" type="password" class="form-control" autocomplete="off">
+                                                <label for="cfmNouveauMdp">Confirmation du nouveau mot de Passe</label>
+                                                <input id="cfmNouveauMdp" type="password" class="form-control" autocomplete="off">
                                                 <span id='messageCfmNouveauMdp' class='text-danger'></span>
+                                            </div>
+                                            <div class="form-group col-md-12 ">
+                                                <div id="msgModalMdp"></div>
                                             </div>
                                         </div>
                                         <div>
                                             <button class="annuler" data-modal-dismiss>Annuler</button>
-                                            <button id='btnSupprimer' class="valider">Modifier</button>
+                                            <button id='btnVMdp' class="valider">Modifier</button>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal" data-modal-name="modalSupprimerCompte">
+                                <div class="modal__dialog">
+                                    <header class="modal__header">
+                                        <h3 class="modal__title"><h3>Et tu sur de vouloir supprimer ton compte ?</h3>
+                                    </header>
+                                    <div class="modal__content">
+                                        <div class="form-group col-md-12 ">
+                                            <h2><strong>Cela seras irréversible</strong></h2>
+                                        </div>
+                                        <div class="form-group col-md-12 ">
+                                            <div id="confirmersupprimer"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="annuler" data-modal-dismiss>Non</button>
+                                        <button id='btnSupprimerCompte' class="valider">Oui</button>
                                     </div>
                                 </div>
                             </div>
@@ -225,8 +263,6 @@ require "content/nav/navbar.php";
         </div>
     </div>
 </div>
-
-
 
 <?php
 require "content/nav/piedpage.php";

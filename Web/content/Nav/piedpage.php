@@ -13,4 +13,4 @@
 
 </footer>
 
-<script src="content/js/navbar.js?ver=7""></script>
+<script src="content/js/navbar.js?ver=7"></script>

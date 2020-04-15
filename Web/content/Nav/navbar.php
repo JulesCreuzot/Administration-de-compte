@@ -33,7 +33,7 @@
                             ?>
                             <li class='settings'><a href='administration.php'><i class="fa fa-lg fa-lock"></i>Administration</a></li>
                             <?php } ?>
-                            <li class='settings'><a href='gestioncomptes.php'><i class='fa fa-lg fa-gear'></i>Paramètres</a></li>
+                            <li class='settings'><a href='gestioncompte.php'><i class='fa fa-lg fa-gear'></i>Paramètres</a></li>
                         </ul>
                     </li>
                     <?php

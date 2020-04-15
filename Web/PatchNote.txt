@@ -55,12 +55,24 @@ patch note V1.0 | 2 -- Jules CREUZOT
 
 patch note V1.0 | 3 -- Jules CREUZOT
     - Dans le ajax inscription.php :
-        - Ajout du hachage du mot de passe pour plus de sécurité
+        - Ajout du hachage du mot de passe pour plus de sécurité,
     - Dans le ajax identification.php :
-        - Ajout de la comparaison du hachage du mot de passe afin de pouvoir ce conneter
+        - Ajout de la comparaison du hachage du mot de passe afin de pouvoir ce conneter,
     - Modification de la base de données :
-        - MAJ du champ pswd dans la table de compte
-        - Suppression d'un compte car nous pouvons en crée
-        - Suite au hachage des mot de passe, changement des mot de passe dans la base de données pour les deux comptes existant
-    - Ajout de l'affichage des information personnel sur la page gestioncomptes.php
-    - Travail sur un style plus propre de la page
+        - MAJ du champ pswd dans la table de compte,
+        - Suppression d'un compte car nous pouvons en crée,
+        - Suite au hachage des mot de passe, changement des mot de passe dans la base de données pour les deux comptes existant,
+    - Ajout de l'affichage des information personnel sur la page gestioncomptes.php,
+    - Travail sur un style plus propre de la page,
+    - Suppression de vieux fichiers,
+
+patch note V1.0 | 4 -- Jules CREUZOT
+    - Ajout de paramétrage gravatar dans la page gestioncomptes.php :
+           - g pour image adapté à tout type de site
+           - s pour la taille
+           - mp pour mettre l'avatar par défaut en silhouette de personne,
+    - Renommage de la page gestionscomtes.php en gestioncompte.php,
+    - Complétion de la page gestioncompte.js :
+        - ajout de la possibilité de mettre à jours les données,
+    - Ajout de fichiers dans content -> ajax -> utilisateur, il permettrons de faire la MAJ des information d'un utilisateurs
+    - Ajout de la possibilité de suppimer le compte d'un utilisateur
