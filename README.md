@@ -3,10 +3,15 @@ Administration de compte - Lycée Saint Rémi | Amiens, Projet réaliser dans le
 
 Fonctionnement / principes du projet.
 
-Le but du projet est simple : 
-Un module de connexion va être mis en place, sur celui-ci on aura la possibilité de créer des articles journaliers, ceux-ci seront
-affectés à un login visible aux utilisateurs.
-Les logins / mots de passes ou informations personnelles seront inclus dans une base de donnée.
-Les logins d'administrateurs seront dans la couleur rouge, avec la fonction supplémentaire de modération / administration.
+Nous avons créé un site responsive permettant de créer un compte sur notre site, tout est connecté a notre base ou les mots de passes sont sécurisés.
+Un module d'administration est également présent permettant d'administrer les visiteurs du site.
+Sur la partie COMPTE vous pouvez rajouter plusieurs informations personnelles comme votre nom, une biographie personnelle ou même votre propre Gravatar !
+Un chat (encore) factice est présent ce qui permettra a nos utilisateurs de discuter entre eux.
+Le site est clair, simple d'utilisation et intuitif, plusieurs boutons sont mis a disposition pour vous guider à travers le site.
 
-Ce projet sera réalisé par : Jules CREUZOT et Corentin POSSON, supervisé par Mr VERGHOTE dans le cadre d'un projet de SI6.
+Si vous avez d'autres questions vous pouvez nous envoyer un email à nos mails pro :
+- jules.creuzot@saint-remi.net
+- corentin.posson@saint-remi.net
+
+
+Touts droits réservés BTS SIO_2019-2020 / Jules Creuzot, Corentin Posson.
