@@ -27,8 +27,8 @@ require "content/nav/navbar.php";
     <div class="page-header">
         <h1>Projet SI6 - Gestion d'un compte</h1>
     </div>
-    <p class="lead">C'est une page d'exemple</p>
-    <p>Seulement le style général du site à été réaliser; Des modification aurons lieu prochainement</p>
+    <p class="lead">C'est une page d'exemple.</p>
+    <p>Seulement le style général du site à été réalisé; Des modifications seront apportées prochainement.</p>
 </div>
 
 <?php

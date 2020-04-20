@@ -76,3 +76,6 @@ patch note V1.0 | 4 -- Jules CREUZOT
         - ajout de la possibilité de mettre à jours les données,
     - Ajout de fichiers dans content -> ajax -> utilisateur, il permettrons de faire la MAJ des information d'un utilisateurs
     - Ajout de la possibilité de suppimer le compte d'un utilisateur
+patch note V1.0 | 5 -- Corentin POSSON
+    - Modification formulation et orthographe première partie.
+    - Clarification README 

@@ -40,7 +40,7 @@ require "content/nav/navbar.php";
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <div class="alert alert-danger text-center">
-                Vous allez être rediriger vers l'accueil dans quelque instant<br>
+                Vous allez être redirigés vers l'accueil dans quelques instants...<br>
                 et <strong>déconnecter</strong>.<br>
                 Il est conseillé de fermer toutes les fenêtres de navigation.
             </div>

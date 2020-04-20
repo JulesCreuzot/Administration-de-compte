@@ -8,7 +8,7 @@ if(!isset($_SESSION['compte']) || !($_SESSION['compte']['libellecomptes'] === "A
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Administration | Votre Chat </title>
+    <title>Administration | Votre Chat</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="icon" type="image/png" href="#">
@@ -76,7 +76,7 @@ require "content/nav/navbar.php";
                     <div class="card mx-auto">
                         <div id='compte' class="card-body" style="padding: 10px;">
                             <div class="card-header col-md-12">
-                                    <div class="text-center"><p>Sons Logo</p></div>
+                                    <div class="text-center"><p>Son Logo</p></div>
                                     <img src="content/img/logodefaut.png">
                                     <p style="padding: 30px">
                                         Dimension : <strong>(150 * 150)</strong>,<br>
@@ -111,7 +111,7 @@ require "content/nav/navbar.php";
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-12 text-center ">
-                                    <label>Nom et Prénom </label>
+                                    <label>Nom et Prénom</label>
                                 </div>
                                 <div class="form-group col-md-4 ">
                                     <input id="nom" class="form-control text-center" autocomplete="off" readonly>
@@ -125,7 +125,7 @@ require "content/nav/navbar.php";
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4 text-center">
-                                    <label>Grade </label>
+                                    <label>Grade</label>
                                     <input id="grade" class="form-control text-center" autocomplete="off" readonly>
                                 </div>
                                 <div class="form-group col-md-4 text-center">
@@ -148,7 +148,7 @@ require "content/nav/navbar.php";
                             <div class="modal" data-modal-name="modalemail">
                                 <div class="modal__dialog">
                                     <header class="modal__header">
-                                        <h3 class="modal__title"><label for="email">Modification l'Email</label></h3>
+                                        <h3 class="modal__title"><label for="email">Modification de l'Email</label></h3>
                                     </header>
                                     <div class="modal__content">
                                         <div class="form-group col-md-12 ">
@@ -212,7 +212,7 @@ require "content/nav/navbar.php";
                                     <div class="modal__content">
                                         <div class="form-row">
                                             <div class="form-group col-md-6 ">
-                                                <label for="grade">Rangs </label>
+                                                <label for="grade">Rangs</label>
                                                 <select class="form-control text-center" id="grade">
                                                     <option value="Administrateur">Administrateur</option>
                                                     <option value="Visiteur">Visiteur</option>

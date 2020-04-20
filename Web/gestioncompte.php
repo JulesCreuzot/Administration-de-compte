@@ -54,10 +54,10 @@ require "content/nav/navbar.php";
                             <div class="col-md-8">
                                 <p style="padding: 30px">
                                     Dimension : <strong>(150 * 150)</strong>,<br>
-                                    Pour avoir un logo sur notre site, il vous suffit de crée un compte sur
+                                    Pour avoir un logo sur notre site, créez-vous un compte sur
                                     <a href="https://fr.gravatar.com/" target="_blank">Gravatar</a> .<br>
-                                    Vous aurrez juste à y mettre votre logo et patienter 5 à 10 minutes
-                                    le temps que notre serveur trouve votre logo chez eux.
+                                    Vous aurez juste à y mettre votre logo et patienter 5 à 10 minutes
+                                    le temps que notre serveur se mette à jour.
                                 </p>
                             </div>
                         </div>
@@ -122,7 +122,7 @@ require "content/nav/navbar.php";
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="note">Note / Desription :</label>
+                                <label for="note">Note / Description :</label>
                                 <textarea id="note" class="form-control" rows="2"></textarea>
                                 <span id='messageNote' class='text-danger'></span>
                             </div>
