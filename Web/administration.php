@@ -8,17 +8,20 @@ if(!isset($_SESSION['compte']) || !($_SESSION['compte']['libellecomptes'] === "A
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Administration | Votre Chat</title>
+    <title>Administration | Votre Chat </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="icon" type="image/png" href="#">
+    <link rel="icon" type="image/ico" href="content/img/logo60x60.ico">
 
     <link rel="stylesheet" href="content/css/bootstrap.min.css">
     <link rel="stylesheet" href="content/css/modal.css">
+    <link rel="stylesheet" href="content/css/easy-autocomplete.min.css">
 
 
     <script src="content/js/jquery.min.js"></script>
     <script src="content/js/bootstrap.min.js"></script>
+    <script src="content/js/jquery.easy-autocomplete.min.js"></script>
+    <script src="content/js/administration.js"></script>
 
 
 </head>
@@ -27,10 +30,25 @@ if(!isset($_SESSION['compte']) || !($_SESSION['compte']['libellecomptes'] === "A
 <?php
 require "content/nav/navbar.php";
 ?>
+<div class='popup' style="padding-top: 100px">
+    <div class='text__popup'>
+        <h1>Modification éffectué</h1>
+        <p><a href="" class='fermer'>Fermer</a></p>
+    </div>
+</div>
 
 <div class="container-fluid hautpage">
     <div class="page-header">
         <h1>Votre Chat- Administration des comptes</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Attention :</strong>Cette page est fictive.
+            Vous pouvez seulement modifier le grade et le status d'un compte
+        </div>
     </div>
 </div>
 
@@ -71,17 +89,17 @@ require "content/nav/navbar.php";
                 </div>
             </div>
             <!-- L'affichage des informations de l'utilisateurs -->
-            <div class="panel-body">
-                <div class="col-md-12 text-center">
-                    <div class="card mx-auto">
-                        <div id='compte' class="card-body" style="padding: 10px;">
+            <div id='compte' class="card-body">
+                <div class="panel-body">
+                    <div class="col-md-12 text-center">
+                        <div class="card mx-auto">
                             <div class="card-header col-md-12">
-                                    <div class="text-center"><p>Son Logo</p></div>
-                                    <img src="content/img/logodefaut.png">
-                                    <p style="padding: 30px">
-                                        Dimension : <strong>(150 * 150)</strong>,<br>
-                                        Il à été crée sur le site <a href="https://fr.gravatar.com/" target="_blank">Gravatar</a> .<br>
-                                    </p>
+                                <div class="text-center"><p>Sons Logo</p></div>
+                                <img src="content/img/logodefaut.png">
+                                <p style="padding: 30px">
+                                    Dimension : <strong>(150 * 150)</strong>,<br>
+                                    Il à été crée sur le site <a href="https://fr.gravatar.com/" target="_blank">Gravatar</a> .<br>
+                                </p>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-12 text-center ">
@@ -111,7 +129,7 @@ require "content/nav/navbar.php";
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-12 text-center ">
-                                    <label>Nom et Prénom</label>
+                                    <label>Nom et Prénom </label>
                                 </div>
                                 <div class="form-group col-md-4 ">
                                     <input id="nom" class="form-control text-center" autocomplete="off" readonly>
@@ -125,7 +143,7 @@ require "content/nav/navbar.php";
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4 text-center">
-                                    <label>Grade</label>
+                                    <label>Grade </label>
                                     <input id="grade" class="form-control text-center" autocomplete="off" readonly>
                                 </div>
                                 <div class="form-group col-md-4 text-center">
@@ -148,12 +166,12 @@ require "content/nav/navbar.php";
                             <div class="modal" data-modal-name="modalemail">
                                 <div class="modal__dialog">
                                     <header class="modal__header">
-                                        <h3 class="modal__title"><label for="email">Modification de l'Email</label></h3>
+                                        <h3 class="modal__title"><label for="email">Modification l'Email</label></h3>
                                     </header>
                                     <div class="modal__content">
                                         <div class="form-group col-md-12 ">
-                                            <input id="inputEmail" class="form-control" autocomplete="off">
-                                            <span id='messageInputEmail' class='text-danger'></span>
+                                            <input id="modalEmail" class="form-control" autocomplete="off">
+                                            <span id='messageModalEmail' class='text-danger'></span>
                                         </div>
                                     </div>
                                     <div>
@@ -169,8 +187,8 @@ require "content/nav/navbar.php";
                                     </header>
                                     <div class="modal__content">
                                         <div class="form-group col-md-12 ">
-                                            <input id="inputPseudo" class="form-control" autocomplete="off">
-                                            <span id='messageInputEmail' class='text-danger'></span>
+                                            <input id="modalPseudo" class="form-control" autocomplete="off">
+                                            <span id='messageModalPseudo' class='text-danger'></span>
                                         </div>
                                     </div>
                                     <div>
@@ -187,14 +205,14 @@ require "content/nav/navbar.php";
                                     <div class="modal__content">
                                         <div class="form-row">
                                             <div class="form-group col-md-6 ">
-                                                <label for="inputNom">Nom </label>
-                                                <input id="inputNom" class="form-control" autocomplete="off">
-                                                <span id='messageInputNom' class='text-danger'></span>
+                                                <label for="modalNom">Nom </label>
+                                                <input id="modalNom" class="form-control" autocomplete="off">
+                                                <span id='messageModaltNom' class='text-danger'></span>
                                             </div>
                                             <div class="form-group col-md-6 ">
-                                                <label for="inputPrenom">Prénom </label>
-                                                <input id="inputPrenom" class="form-control" autocomplete="off">
-                                                <span id='messageInputPrenom' class='text-danger'></span>
+                                                <label for="modalPrenom">Prénom </label>
+                                                <input id="modalPrenom" class="form-control" autocomplete="off">
+                                                <span id='messageModalPrenom' class='text-danger'></span>
                                             </div>
                                         </div>
                                     </div>
@@ -212,24 +230,25 @@ require "content/nav/navbar.php";
                                     <div class="modal__content">
                                         <div class="form-row">
                                             <div class="form-group col-md-6 ">
-                                                <label for="grade">Rangs</label>
-                                                <select class="form-control text-center" id="grade">
+                                                <label for="grade">Rangs </label>
+                                                <select class="form-control text-center" id="modalGrade">
                                                     <option value="Administrateur">Administrateur</option>
                                                     <option value="Visiteur">Visiteur</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="status">Status</label>
-                                                <select class="form-control text-center" id="status">
+                                                <select class="form-control text-center" id="modalStatus">
                                                     <option value="Valide">Valide</option>
                                                     <option value="Bloquer">Bloquer</option>
                                                 </select>
                                             </div>
                                         </div>
+                                        <span id="messageModifStatusGrades" class='text-danger'></span>
                                     </div>
                                     <div>
                                         <button class="annuler" data-modal-dismiss>Annuler</button>
-                                        <button id='valider' class="valider">Modifier</button>
+                                        <button id='modifStatusGrades' class="valider">Modifier</button>
                                     </div>
                                 </div>
                             </div>

@@ -15,7 +15,7 @@ else {
     <title>Votre Chat | Chat</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="icon" type="image/png" href="#">
+    <link rel="icon" type="image/ico" href="content/img/logo60x60.ico">
 
     <link rel="stylesheet" href="content/css/bootstrap.min.css">
     <link rel='stylesheet' href='content/css/chatfontawesome.min.css'>
@@ -75,7 +75,7 @@ require "content/nav/navbar.php";
         <li class="self">
             <div class="msg">
                 <p>Piuff...</p>
-                <p>Ce que ça donne quand tu écrit... </p>
+                <p>Ce que ça donne quand tu écris…</p>
                 <time>10:18</time>
             </div>
         </li>
@@ -106,7 +106,7 @@ require "content/nav/navbar.php";
         <li class="other">
             <div class="msg">
                 <div class="user">Luzko<span class="range admin">Administrateur</span></div>
-                <p>Je Travail encore sur le chat... <emoji class="books"></emoji><emoji class="books"></emoji></p>
+                <p>Je travaille encore sur le chat… <emoji class="books"></emoji><emoji class="books"></emoji></p>
                 <time>02:10</time>
             </div>
         </li>

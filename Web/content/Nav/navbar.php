@@ -26,7 +26,7 @@
                 if (isset($_SESSION['compte']['mail'])) {
                     ?>
                     <li class='dropdown user-dropdown'>
-                        <a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class="js-user-name"><i class='fa fa-lg fa-user'></i>Mom Compte</span><b class='caret'></b></a>
+                        <a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class="js-user-name"><i class='fa fa-lg fa-user'></i>Mon Compte</span><b class='caret'></b></a>
                         <ul class='dropdown-menu'>
                             <?php
                             if ($_SESSION['compte']['libellecomptes'] === "Administrateur") {

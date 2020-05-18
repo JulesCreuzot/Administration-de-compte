@@ -2,10 +2,9 @@
 require '../class/class.database.inc.php';
 $db = Database::getInstance();
 $sql = <<<EOD
-        Select id, concat(nom, ' ', prenom) as nomPrenom 
+        Select id, pseudo
         from comptes
-        where nom is not null
-        order by nom, prenom;
+        where pseudo is not null;
 EOD;
 $curseur = $db->query($sql);
 $lesLignes = $curseur->fetchAll(PDO::FETCH_ASSOC);

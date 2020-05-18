@@ -10,17 +10,13 @@ class Database
     public static function getInstance()
     {
         if (is_null(self::$_instance)) {
-            $nomServeur = $_SERVER['SERVER_NAME'];
-            $local = ((substr($nomServeur, 0, 7) == '192.168') || ($nomServeur == 'localhost') || (substr($nomServeur, 0, 3) == '127'));
-            $dbHost = $local ? 'localhost' : 'suxdibsfamilycr.mysql.db';
-            $dbUser = $local ? 'root' : 'suxdibsfamilycr';
-            $dbPassword = $local ? '' : '576dddd412b7ca69a91F';
-            $dbBase = $local ? 'votrechat' : 'suxdibsfamilycr';
-            $port = $local ? '3308' : '3306';
+            $dbHost = 'localhost';
+            $dbUser = 'root';
+            $dbPassword = '';
+            $dbBase = 'votrechat';
+            $dbPort = '3308';
             try {
-                $chaine = "mysql:host=$dbHost;dbname=$dbBase";
-                if ($local)
-                    $chaine .= ";port=" . $port;
+                $chaine = "mysql:host=$dbHost;dbname=$dbBase;port=$dbPort";
                 $db = new PDO($chaine, $dbUser, $dbPassword);
                 $db->exec("SET NAMES 'utf8'");
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

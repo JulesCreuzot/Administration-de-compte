@@ -90,5 +90,5 @@ INSERT INTO `typescomptes` (`libelleComptes`) VALUES
 -- Ajout des comptes nous servant pour l'essaie dans la table comptes
 --
 INSERT INTO `comptes` (`id`, `email`, `pswd`, `nom`, `prenom`, `pseudo`, `description`, `libelleComptes`) VALUES
-(1, 'jules.creuzot@saint-remi.net', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'Jules', 'Creuzot', 'Luzko', 'Je suis moi même', 'Administrateur'),
-(2, 'corentin.posson@saint-remi.net', '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c', NULL, NULL, 'CorPos', NULL, 'Visiteur');
+(1, 'jules.creuzot@saint-remi.net', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 'Creuzot', 'Jules', 'Luzko', 'Je suis moi même', 'Administrateur'),
+(2, 'corentin.posson@saint-remi.net', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', NULL, NULL, 'CorPos', NULL, 'Visiteur');

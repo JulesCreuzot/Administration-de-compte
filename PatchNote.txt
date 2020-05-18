@@ -66,16 +66,27 @@ patch note V1.0 | 3 -- Jules CREUZOT
     - Travail sur un style plus propre de la page,
     - Suppression de vieux fichiers,
 
-patch note V1.0 | 4 -- Jules CREUZOT
+patch note V1.0 | 4 -- Jules CREUZOT le 15/04/2020 à 18h00
     - Ajout de paramétrage gravatar dans la page gestioncomptes.php :
            - g pour image adapté à tout type de site
            - s pour la taille
            - mp pour mettre l'avatar par défaut en silhouette de personne,
     - Renommage de la page gestionscomtes.php en gestioncompte.php,
     - Complétion de la page gestioncompte.js :
-        - ajout de la possibilité de mettre à jours les données,
+        - ajout de la possibilité de mettre à jours les données
+        - ajout de la possibilité de suppimer le compte d'un utilisateur,
     - Ajout de fichiers dans content -> ajax -> utilisateur, il permettrons de faire la MAJ des information d'un utilisateurs
-    - Ajout de la possibilité de suppimer le compte d'un utilisateur
-patch note V1.0 | 5 -- Corentin POSSON
-    - Modification formulation et orthographe première partie.
-    - Clarification README 
+
+patch note V1.0 | 5 -- Jules CREUZOT et Corentin POSSON le 18/05/2020 à 12h00
+    - Ajout des logos dans le répertoire content/img
+
+patch note V1.0 | 6 -- Jules CREUZOT le 18/05/2020 à 12h30
+    - Complétion de la page d'administration :
+        - Possibilité de bloquer un compte
+        - Possibilité de changer le grade du compte,
+        - Filtrage des comptes par Mail, Pseudo et Nom fonctionnel,
+    - Ajout d'oubli de mot de passe dans la connexion, changement de MDP via l'envoi d'un code sur son e-mail
+    - Changement de place de la PatchNote
+
+
+

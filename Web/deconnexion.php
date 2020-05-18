@@ -20,7 +20,7 @@ else {
     <title>Votre Chat | Déconnexion </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="icon" type="image/png" href="#">
+    <link rel="icon" type="image/ico" href="content/img/logo60x60.ico">
 
     <link rel="stylesheet" href="content/css/bootstrap.min.css">
 
@@ -40,8 +40,8 @@ require "content/nav/navbar.php";
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <div class="alert alert-danger text-center">
-                Vous allez être redirigés vers l'accueil dans quelques instants...<br>
-                et <strong>déconnecter</strong>.<br>
+                Vous allez être redirigé vers l'accueil dans quelques instants<br>
+                et <strong>déconnecté</strong>.<br>
                 Il est conseillé de fermer toutes les fenêtres de navigation.
             </div>
             <meta http-equiv="Refresh" content="5; url=index.php" />

@@ -8,7 +8,7 @@ session_start();
     <title>Votre Chat | Accueil</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="icon" type="image/png" href="#">
+    <link rel="icon" type="image/ico" href="content/img/logo60x60.ico">
 
     <link rel="stylesheet" href="content/css/bootstrap.min.css">
 
@@ -27,8 +27,8 @@ require "content/nav/navbar.php";
     <div class="page-header">
         <h1>Projet SI6 - Gestion d'un compte</h1>
     </div>
-    <p class="lead">C'est une page d'exemple.</p>
-    <p>Seulement le style général du site à été réalisé; Des modifications seront apportées prochainement.</p>
+    <p class="lead">C'est une page d'exemple</p>
+    <p>Seulement le style général du site a été réalisé ; Des modifications auront lieu prochainement.</p>
 </div>
 
 <?php

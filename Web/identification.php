@@ -14,15 +14,17 @@ if(isset($_SESSION['compte'])) {
     <title>Votre Chat  | Identification</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="icon" type="image/png" href="#">
+    <link rel="icon" type="image/ico" href="content/img/logo60x60.ico">
 
     <link rel="stylesheet" href="content/css/bootstrap.min.css">
     <link rel="stylesheet" href="content/css/identification.css">
+    <link rel="stylesheet" href="content/css/modal.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 
     <script src="content/js/class.std.js"></script>
     <script src="content/js/jquery.min.js"></script>
     <script src="content/js/bootstrap.min.js"></script>
+    <script src="content/js/oublimotdepasse.js"></script>
 
 </head>
 <body>
@@ -30,6 +32,13 @@ if(isset($_SESSION['compte'])) {
 <?php
 require "content/nav/navbar.php";
 ?>
+
+<div class='popup' style="padding-top: 100px">
+    <div class='text__popup'>
+        <h1>Modification éffectué</h1>
+        <p><a href="" class='fermer'>Fermer</a></p>
+    </div>
+</div>
 
 <div class="container" style="padding-top: 50px">
     <div class="col-sm-2"></div>
@@ -49,7 +58,9 @@ require "content/nav/navbar.php";
                     <div id="msgConnexion"></div>
                     <!-- <button class="unmask" type="button" title="Masquer/Demasquer le mot de passe">Démasquer</button> -->
                 </label>
-                <p class="forgot-pass">Mot de passe oublié ?</p>
+                <div class="forgot-pass">
+                    <p data-modal-trigger="modalOublieMdp" >Mot de passe oublié ?</p>
+                </div>
                 <button id='btnConnexion' type="button" class="submit">Se connecter</button>
             </div>
             <div class="sub-cont">
@@ -94,15 +105,68 @@ require "content/nav/navbar.php";
                 </div>
             </div>
         </div>
+        <div class="modal" data-modal-name="modalOublieMdp">
+            <div class="modal__dialog">
+                <header class="modal__header">
+                    <h3 class="modal__title"><label for="email">Mot de passe oublié ?</label></h3>
+                </header>
+                <div class="modal__content">
+                    <div id="message" class="text-center"></div>
+                    <div id="msgEnvoieMail"></div>
+                    <div id="zone1">
+                        <div class="form-group col-md-12 ">
+                            <label for="envoiMail">Entrer votre Email</label>
+                            <input id="envoiMail" class="form-control" >
+                            <span id="messageEnvoiMail" class='text-danger' style="text-align: center"></span>
+                        </div>
+
+                        <div style="padding-top: 10px"></div>
+                        <div class="col-md-5">
+                            <button class="btn btn-info" data-modal-dismiss >Annuler</button>
+                        </div>
+                        <div class="col-md-5">
+                            <button id='btnOublieMdp' class="btn btn-danger">Envoyer</button>
+                        </div>
+                        <div style="padding-top: 10px"></div>
+                    </div>
+
+                    <div id="zone2">
+                        <div class="form-group col-md-12">
+                            <label for="code">Code reçu par mail</label>
+                            <input id="code" class="form-control" >
+                            <span id="messageCode" class='text-danger'></span>
+                            <label for="inputNewMdp">Nouveau Mot de passe</label>
+                            <input id="inputNewMdp" class="form-control" type="password">
+                            <span id="messageInputNewMdp" class='text-danger'></span>
+                            <label for="inputCfrmNewMdp">Confirmation du nouveau Mot de passe</label>
+                            <input id="inputCfrmNewMdp" class="form-control" type="password">
+                            <span id="messageInputCfrmNewMdp" class='text-danger'></span>
+                        </div>
+                        <div style="padding-top: 10px"></div>
+                        <div class="col-md-5">
+                            <button class="btn btn-info" data-modal-dismiss >Annuler</button>
+                        </div>
+                        <div class="col-md-5">
+                            <button id='btnChangerMdp' class="btn btn-danger">Modifier</button>
+                        </div>
+                        <div style="padding-top: 10px"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
     </div>
     <div class="col-sm-2"></div>
 </div>
-
 
 <?php
 require "content/nav/piedpage.php";
 ?>
 
 <script src="content/js/identification.js?ver=6"></script>
+<script src="content/js/modal.js"></script>
+
 </body>
 </html>

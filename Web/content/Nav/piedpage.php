@@ -5,7 +5,7 @@
         <div style="padding: 10px"></div>
     </div>
     <div class="col-md-4 text-center">
-        <img src="content/img/logovc.png" class="" alt="Logo Vc">
+        <img src="content/img/logo60x60.png" style="padding-top: 12px" class="" alt="Logo Vc">
 
     </div>
     <div class="col-md-4 text-right">
